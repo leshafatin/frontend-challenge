@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  align-items: center;
+  background: #2196f3;
+  margin: 0;
+  height: 64px;
+
+  li {
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    padding: 0 15px;
+  }
+}

@@ -3,11 +3,11 @@ import Header from "./components/Header/Header";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AllCats, { IFetchedCat } from "./components/AllCats/AllCats";
 import { useState } from "react";
-
-const API_KEY = "47141282-7d4d-472e-a590-bf90ac3c1e76";
+import FavouriteCats from "./components/AllCats/FavouriteCats/FavouriteCats";
 
 function App() {
   const [favouriteCats, setFavouriteCats] = useState<IFetchedCat[]>([]);
+  const [activeTab, setActiveTab] = useState(0);
 
   const addCatToFavourites = (cat: IFetchedCat) => {
     setFavouriteCats([...favouriteCats, cat]);
@@ -21,13 +21,23 @@ function App() {
 
   return (
     <div className="App">
-      <Header activeTab={1} />
       <BrowserRouter>
+        <Header activeTab={activeTab} setActiveTab={setActiveTab} />
         <Routes>
           <Route
             path={"/"}
             element={
               <AllCats
+                addCat={addCatToFavourites}
+                deleteCat={deleteCatFromFavouties}
+              />
+            }
+          />
+          <Route
+            path={"/favourite"}
+            element={
+              <FavouriteCats
+                cats={favouriteCats}
                 addCat={addCatToFavourites}
                 deleteCat={deleteCatFromFavouties}
               />

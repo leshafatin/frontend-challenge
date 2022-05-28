@@ -7,10 +7,11 @@ interface ICatCardProps {
   cat: IFetchedCat;
   addCat: (cat: IFetchedCat) => void;
   deleteCat: (cat: IFetchedCat) => void;
+  favourite: boolean;
 }
 
 export default function CatCard(props: ICatCardProps) {
-  const [isFavoutite, setFavourite] = useState<boolean>(false);
+  const [isFavoutite, setFavourite] = useState<boolean>(props.favourite);
 
   const handleClick = () => {
     setFavourite(!isFavoutite);

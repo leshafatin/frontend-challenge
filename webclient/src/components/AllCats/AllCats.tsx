@@ -62,7 +62,6 @@ export default function AllCats(props: IAllCatsProps) {
     )
       return;
     setIsFetching(true);
-    console.log(isFetching);
   };
 
   useEffect(() => {
@@ -73,7 +72,6 @@ export default function AllCats(props: IAllCatsProps) {
   if (!isLoaded) {
     return <LoadingSpinner />;
   } else {
-    console.log(cats);
     return (
       <>
         <div className={styles.container}>
@@ -87,7 +85,6 @@ export default function AllCats(props: IAllCatsProps) {
             />
           ))}
         </div>
-        {isFetching && <p>...загружаем еще котиков...</p>}
       </>
     );
   }

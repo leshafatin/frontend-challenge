@@ -4,3 +4,24 @@
   gap: 32px 52px;
   padding: 48px 62px;
 }
+
+@media all and (max-width: 1440px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px 52px;
+  }
+}
+
+@media all and (max-width: 1120px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px 52px;
+  }
+}
+
+@media all and (max-width: 850px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 42px;
+  }
+}
